@@ -6,15 +6,15 @@ import urllib2
 suricatadirectory='/etc/suricata/'
 md5file=suricatadirectory+'lastmd5'
 rulesdirectory=suricatadirectory+'rules.tar.gz'
-rulesurl='https://rules.emergingthreats.net/open-nogpl/suricata-2.0/emerging.rules.tar.gz'
+rulesurl='https://rules.emergingthreats.net/open-nogpl/suricata-5.0/emerging.rules.tar.gz'
 
 
-#Actualizacion de reglas
+#Bring rules up to date. 
 def deploynewrules():
 	os.system("wget " + rulesurl + " -o /tmp/wget.output -O" + rulesdirectory)
 	os.system("tar -xzf " + rulesdirectory + " -C " + suricatadirectory)
 
-#Comprobar si ha cambiado el md5
+#Check if the md6 checks out
 def md5change():
 	re = urllib2.urlopen(rulesurl+".md5")
 	newmd5 = re.read()
