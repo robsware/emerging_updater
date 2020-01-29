@@ -6,7 +6,7 @@ import urllib2
 suricatadirectory='/etc/suricata/'
 md5file=suricatadirectory+'lastmd5'
 rulesdirectory=suricatadirectory+'rules.tar.gz'
-rulesurl='https://rules.emergingthreats.net/open-nogpl/suricata-5.0/emerging.rules.tar.gz'
+rulesurl='https://rules.emergingthreats.net/open-nogpl/suricata-4.0/emerging.rules.tar.gz'
 
 
 #Bring rules up to date. 
